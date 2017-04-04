@@ -6,6 +6,7 @@ import java.util.ArrayList;
 public class Test {
 
 	public static void main(String[] args) {
+		lambdaSchedulerTest();
 		weightedSchedulerTest();
 	}
 
@@ -22,7 +23,8 @@ public class Test {
 		jobs.add(new LambdaJob(14, 16));
 		jobs.add(new LambdaJob(15, 18));
 		jobs.add(new LambdaJob(17, 20));
-		
+		System.out.println("Test jobs for LambdaScheduler:");
+		LambdaScheduler.printJobs(jobs);
 		LambdaScheduler.schedule(jobs);
 	}
 
@@ -40,7 +42,8 @@ public class Test {
 		jobs.add(new WeightedJob(15, 18, 10d));
 		jobs.add(new WeightedJob(17, 20, 13d));
 		jobs.add(new WeightedJob(1, 16, 30d));
-		
+		System.out.println("Test jobs for LambdaWeightedScheduler:");
+		LambdaWeightedScheduler.printJobs(jobs);
 		LambdaWeightedScheduler.schedule(jobs);
 	}
 
